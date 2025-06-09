@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-
+from sklearn.metrics import mean_squared_error
 test = pd.read_csv("test.csv")
 train = pd.read_csv("train.csv")
 
@@ -38,3 +38,14 @@ pred = model.predict(x_val)
 
 testing = test[num]
 test_prediction = model.predict(testing)
+
+from sklearn.metrics import mean_squared_error, r2_score
+
+mse = mean_squared_error(y_val, pred)
+r2 = r2_score(y_val, pred)
+print("Validation MSE:", mse)
+print("Validation R² score:", r2)
+
+output = pd.DataFrame({'Id': test['Id'], 'SalePrice': test_prediction})
+output.to_csv('submission.csv', index=False)
+print("Test predictions saved!")

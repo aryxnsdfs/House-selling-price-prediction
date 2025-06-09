@@ -1,0 +1,4 @@
+- Developed a regression model to predict house prices based on various features such as location, area, number of rooms, and more.
+- Used Python with Pandas, NumPy,  LinearRegression and traning of data for data preprocessing and visualization.
+- Trained and evaluated models using Linear Regression from scikit-learn.
+- Achieved mean_squared_error and r2 score
